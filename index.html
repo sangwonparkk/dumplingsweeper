@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+    </style>
+    <script
+      src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" type="module"></script>
+  </head>
+  <body>
+    <h3 class="title">Minesweeper</h3>
+    <div class="board"></div>
+    <div class="container">
+      <div class="minetext">0<span class="data-mine-count"></span></div>
+      <div class="subtext"></div>
+      <div class="timer">⏳️<span id="game-time">000</span></div>
+    </div>
+    <button
+      id="new-game-button"
+      type="button"
+      onclick="window.location.reload()"
+    >
+      New Game
+    </button>
+  </body>
+</html>
