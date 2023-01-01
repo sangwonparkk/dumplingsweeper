@@ -1,4 +1,7 @@
-This is my first project using HTML, CSS, and JavaScript.
+<h3 align="center">
+Minesweeper made with ❤️</br>
+<a target="_blank" href="https://dumplingsweeper.netlify.app/">Play!</a>
+</h3>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3bf6ad35-12be-48f5-a275-4f2eb5caf2de/deploy-status)](https://app.netlify.com/sites/dumplingsweeper/deploys)
 
