@@ -25,3 +25,4 @@ Dumpling Sweeper made with ❤️</br>
 - Change timer to countdown
 - Add functionality to change countdown time
 - Add functionality to change mine count
+- Add a bowl around the grid + fire animations..?
