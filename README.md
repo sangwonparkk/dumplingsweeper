@@ -13,11 +13,10 @@ Dumpling Sweeper made with ❤️</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://en.wikipedia.org/wiki/HTML"><img src="https://github.com/michaelkolesidis/tech-icons/blob/main/icons/html5/html5-plain.svg" height="50px" /></a>
 
-
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
- • 
+•
 [CSS](https://en.wikipedia.org/wiki/CSS)
- • 
+•
 [HTML](https://en.wikipedia.org/wiki/HTML)
 
 ## Things to do
@@ -26,4 +25,3 @@ Dumpling Sweeper made with ❤️</br>
 - Change timer to countdown
 - Add funtionality to set countdown time
 - Add functionality to change mine count
-- Add functionality to change grid size
