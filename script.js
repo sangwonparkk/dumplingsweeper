@@ -94,6 +94,7 @@ function startTimer() {
       // timerElement.toggle("odd");
       if (second < 10) timerElement.innerHTML = "00" + second;
       if (second >= 10 && second < 100) timerElement.innerHTML = "0" + second;
+      if (second >= 100) timerElement.innerHTML = second;
       second++;
     }, 1000);
   }
