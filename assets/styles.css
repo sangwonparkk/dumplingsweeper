@@ -1,6 +1,7 @@
 :root {
   --dark-primary: #8e9aaf;
   --dark-secondary: #cbc0d3;
+  --dark-base: #677791;
   --main-primary: #efd3d7;
   --main-secondary: #feeafa;
   --light-primary: #dee2ff;
@@ -101,12 +102,12 @@ button {
   position: relative;
   margin: 0 0.3rem 1rem;
   padding: 0.6rem;
-  border: 3px solid black;
+  border: 3px solid var(--dark-base);
 }
 
 #new-game-button {
   color: var(--light-primary);
-  background-color: black;
+  background-color: var(--dark-base);
   font-size: 1.2rem;
   font-weight: 600;
 }
