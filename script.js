@@ -83,12 +83,11 @@ function listMinesLeft() {
     );
   }, 0);
   if (markedTilesCount <= NUMBER_OF_MINES)
-    minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount;
-  if (
-    markedTilesCount <= NUMBER_OF_MINES &&
-    NUMBER_OF_MINES - markedTilesCount < 10
-  )
-    minesLeftText.textContent = "0" + NUMBER_OF_MINES - markedTilesCount;
+    if (NUMBER_OF_MINES - markedTilesCount < 10)
+      minesLeftText.textContent = "0" + NUMBER_OF_MINES - markedTilesCount;
+    else {
+      minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount;
+    }
 }
 
 const timerElement = document.getElementById("game-time");
