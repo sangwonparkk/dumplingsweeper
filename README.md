@@ -1,5 +1,5 @@
 <h3 align="center">
-Minesweeper made with ❤️</br>
+Dumpling Sweeper made with ❤️</br>
 <a target="_blank" href="https://dumplingsweeper.netlify.app/">Play!</a>
 </h3>
 
