@@ -19,3 +19,11 @@ Minesweeper made with ❤️</br>
 [CSS](https://en.wikipedia.org/wiki/CSS)
  • 
 [HTML](https://en.wikipedia.org/wiki/HTML)
+
+## Things to do
+
+- Center display message
+- Change timer to countdown
+- Add funtionality to set countdown time
+- Add functionality to change mine count
+- Add functionality to change grid size
