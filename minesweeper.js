@@ -14,7 +14,7 @@ export const TILE_STATUSES = {
 const TIMER = "⏳️";
 const FLAG = "🚩";
 const DETONATION = "💥";
-const MINE = "💣️";
+const MINE = "🥟";
 
 export function createBoard(boardSize, numberOfMines) {
   const board = [];
