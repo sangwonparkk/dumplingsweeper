@@ -111,7 +111,7 @@ button {
 }
 
 #new-game-button {
-  color: var(--light-secondary);
+  color: var(--light-primary);
   background-color: var(--dark-base);
   font-size: 1.2rem;
   font-weight: 600;
