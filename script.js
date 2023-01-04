@@ -27,7 +27,10 @@ const NUMBER_OF_MINES = 10;
 
 // Display message
 const minesLeftText = document.querySelector(".data-mine-count");
-minesLeftText.textContent = NUMBER_OF_MINES;
+if (NUMBER_OF_MINES >= 10) minesLeftText.textContent = NUMBER_OF_MINES;
+else {
+  minesLeftText.textContent = "0" + NUMBER_OF_MINES;
+}
 const messageText = document.querySelector(".subtext");
 const mineText = document.querySelector(".minetext");
 
@@ -81,6 +84,11 @@ function listMinesLeft() {
   }, 0);
   if (markedTilesCount <= NUMBER_OF_MINES)
     minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount;
+  if (
+    markedTilesCount <= NUMBER_OF_MINES &&
+    NUMBER_OF_MINES - markedTilesCount < 10
+  )
+    minesLeftText.textContent = "0" + NUMBER_OF_MINES - markedTilesCount;
 }
 
 const timerElement = document.getElementById("game-time");
