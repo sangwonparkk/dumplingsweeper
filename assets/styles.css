@@ -93,6 +93,10 @@ img.emoji {
   background-color: var(--main-secondary);
 }
 
+.data-mine-count {
+  margin-left: 0.05em;
+}
+
 button {
   text-align: center;
   border-radius: 60px;

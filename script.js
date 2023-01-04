@@ -23,11 +23,11 @@ import {
 
 // Constant Variables
 const BOARD_SIZE = 10;
-const NUMBER_OF_MINES = 10;
+const NUMBER_OF_MINES = 4;
 
 // Display message
 const minesLeftText = document.querySelector(".data-mine-count");
-minesLeftText.textContent = NUMBER_OF_MINES;
+minesLeftText.textContent = "0" + NUMBER_OF_MINES;
 const messageText = document.querySelector(".subtext");
 const mineText = document.querySelector(".minetext");
 
