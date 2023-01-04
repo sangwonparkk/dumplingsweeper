@@ -82,12 +82,14 @@ function listMinesLeft() {
       count + row.filter((tile) => tile.status === TILE_STATUSES.MAKRED).length
     );
   }, 0);
-  if (markedTilesCount <= NUMBER_OF_MINES)
-    if (NUMBER_OF_MINES - markedTilesCount < 10)
-      minesLeftText.textContent = "0" + NUMBER_OF_MINES - markedTilesCount;
-    else {
-      minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount;
+  if (markedTilesCount <= NUMBER_OF_MINES) {
+    let remainingMines = NUMBER_OF_MINES - markedTilesCount;
+    if (remainingMines < 10) {
+      minesLeftText.textContent = "0" + remainingMines;
+    } else {
+      minesLeftText.textContent = remainingMines;
     }
+  }
 }
 
 const timerElement = document.getElementById("game-time");
