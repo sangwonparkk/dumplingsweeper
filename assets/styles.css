@@ -1,9 +1,9 @@
 :root {
-  --dark-brown: #6c584c;
-  --brown: #a98467;
-  --green: #adc178;
-  --light-green: #dde5b6;
-  --tan: #f0ead2;
+  --dark-primary: #8e9aaf;
+  --dark-secondary: #cbc0d3;
+  --main-primary: #efd3d7;
+  --main-secondary: #feeafa;
+  --light-primary: #dee2ff;
 }
 
 * {
@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  background-color: var(--dark-brown);
+  background-color: var(--dark-primary);
   display: flex;
   align-items: center;
   font-family: "Roboto", sans-serif;
@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-  color: var(--tan);
+  color: var(--light-primary);
   font-size: 1.5rem;
   margin: 10px 0;
   width: 440px;
@@ -59,7 +59,7 @@ img.emoji {
   grid-template-columns: repeat(var(--size), 40px);
   grid-template-rows: repeat(var(--size), 40px);
   gap: 4px;
-  background-color: var(--green);
+  background-color: var(--main-primary);
   border-radius: 10px;
 }
 
@@ -70,18 +70,18 @@ img.emoji {
   justify-content: center;
   align-items: center;
   color: white;
-  border: 2px solid var(--light-green);
+  border: 2px solid var(--main-secondary);
   user-select: none;
   border-radius: 5px;
 }
 
 .board > [data-status="hidden"] {
-  background-color: var(--light-green);
+  background-color: var(--main-secondary);
   cursor: pointer;
 }
 
 .board > [data-status="mine"] {
-  background-color: var(--light-green);
+  background-color: var(--main-secondary);
 }
 
 .board > [data-status="number"] {
@@ -89,7 +89,7 @@ img.emoji {
 }
 
 .board > [data-status="marked"] {
-  background-color: var(--light-green);
+  background-color: var(--main-secondary);
 }
 
 button {
@@ -105,9 +105,8 @@ button {
 }
 
 #new-game-button {
-  color: var(--tan);
+  color: var(--light-primary);
   background-color: black;
   font-size: 1.2rem;
   font-weight: 600;
 }
-

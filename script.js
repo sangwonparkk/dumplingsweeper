@@ -33,7 +33,7 @@ const mineText = document.querySelector(".minetext");
 
 // Bomb message
 var div = document.createElement("div");
-div.textContent = "💣️";
+div.textContent = "🥟";
 mineText.prepend(div);
 twemoji.parse(document.body);
 
