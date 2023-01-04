@@ -23,5 +23,5 @@ Dumpling Sweeper made with ❤️</br>
 
 - Center display message
 - Change timer to countdown
-- Add funtionality to set countdown time
+- Add functionality to change countdown time
 - Add functionality to change mine count
