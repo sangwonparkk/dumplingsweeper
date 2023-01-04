@@ -5,6 +5,7 @@
   --main-primary: #efd3d7;
   --main-secondary: #feeafa;
   --light-primary: #dee2ff;
+  --light-secondary: #f0ead2;
 }
 
 * {
@@ -19,7 +20,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   flex-direction: column;
-  color: #f0ead2;
+  color: var(--light-secondary);
 }
 
 .title {
@@ -110,7 +111,7 @@ button {
 }
 
 #new-game-button {
-  color: var(--light-primary);
+  color: var(--light-secondary);
   background-color: var(--dark-base);
   font-size: 1.2rem;
   font-weight: 600;
