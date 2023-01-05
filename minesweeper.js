@@ -13,7 +13,7 @@ export const TILE_STATUSES = {
 // Emojis
 const TIMER = "⏳️";
 const FLAG = "🚩";
-const DETONATION = "💥";
+const DETONATION = "😭";
 const MINE = "🥟";
 
 export function createBoard(boardSize, numberOfMines) {

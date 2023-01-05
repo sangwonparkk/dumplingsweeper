@@ -45,7 +45,7 @@ const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 const boardElement = document.querySelector(".board");
 
 // Timer
-let isFirstClick = true;
+var isFirstClick = true;
 let timePassed;
 let timer = true;
 
@@ -65,8 +65,13 @@ board.forEach((row) => {
     // Add event listern for right click
     tile.element.addEventListener("contextmenu", (e) => {
       e.preventDefault();
+      if (isFirstClick) {
+        startTimer();
+        timer = true;
+      }
       markTile(tile);
       listMinesLeft();
+      isFirstClick = false;
     });
   });
 });
