@@ -88,12 +88,15 @@ function listMinesLeft() {
     );
   }, 0);
   if (markedTilesCount <= NUMBER_OF_MINES) {
-    let remainingMines = NUMBER_OF_MINES - markedTilesCount;
-    if (remainingMines < 10) {
-      minesLeftText.textContent = "0" + remainingMines;
+    minesLeftText.style.color = "#dee2ff";
+    let remainingFlags = NUMBER_OF_MINES - markedTilesCount;
+    if (remainingFlags < 10) {
+      minesLeftText.textContent = "0" + remainingFlags;
     } else {
-      minesLeftText.textContent = remainingMines;
+      minesLeftText.textContent = remainingFlags;
     }
+  } else {
+    minesLeftText.style.color = "red";
   }
 }
 
