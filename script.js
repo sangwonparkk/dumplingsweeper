@@ -24,7 +24,7 @@ import {
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 75;
 
 // Display message
 const minesLeftText = document.querySelector(".data-mine-count");
