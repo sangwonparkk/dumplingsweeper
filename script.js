@@ -24,6 +24,7 @@ import {
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
+const TIME_LIMIT = 10;
 
 // Display message
 const minesLeftText = document.querySelector(".data-mine-count");
@@ -44,10 +45,28 @@ twemoji.parse(document.body);
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 const boardElement = document.querySelector(".board");
 
-// Timer
+// Countdown
+const timerElement = document.getElementById("game-time");
 var isFirstClick = true;
+setTimeText(TIME_LIMIT);
 let timePassed;
 let timer = true;
+var timeIsUp = false;
+
+/**
+ *
+ * @param {int} TIME_LIMIT
+ * Receive the time limit in seconds and display in screen
+ */
+function setTimeText(timeLimit) {
+  let second = timeLimit % 60;
+  let minute = Math.floor(timeLimit / 60);
+  if (second < 10 && second >= 0)
+    timerElement.innerHTML = minute + ":" + "0" + second;
+  else {
+    timerElement.innerHTML = minute + ":" + second;
+  }
+}
 
 board.forEach((row) => {
   row.forEach((tile) => {
@@ -100,27 +119,32 @@ function listMinesLeft() {
   }
 }
 
-const timerElement = document.getElementById("game-time");
-
 function startTimer() {
   if (timer) {
     clearInterval(timePassed);
-    let second = 0;
-
+    let seconds = TIME_LIMIT;
     timePassed = setInterval(function () {
       // timerElement.toggle("odd");
-      if (second < 10) timerElement.innerHTML = "00" + second;
-      if (second >= 10 && second < 100) timerElement.innerHTML = "0" + second;
-      if (second >= 100) timerElement.innerHTML = second;
-      second++;
+      setTimeText(seconds);
+      seconds--;
+      if (seconds < -1) {
+        timerElement.style.color = "red";
+        timerElement.innerHTML = "0:00";
+        clearInterval(timePassed);
+        timeIsUp = true;
+        checkGameEnd();
+      }
+      // Needs to stop at 0:00 and make game lose
     }, 1000);
   }
 }
 
 // Checks whether game is won or lost
 function checkGameEnd() {
-  const win = checkWin(board);
-  const lose = checkLose(board);
+  var win = checkWin(board);
+  var lose = checkLose(board);
+
+  if (timeIsUp) lose = true;
 
   if (win || lose) {
     clearInterval(timePassed);
