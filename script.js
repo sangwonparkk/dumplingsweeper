@@ -24,9 +24,9 @@ import {
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
-const TIME_LIMIT = 75;
+const TIME_LIMIT = 5;
 
-// Display message
+// Display Message
 const minesLeftText = document.querySelector(".data-mine-count");
 if (NUMBER_OF_MINES >= 10) minesLeftText.textContent = NUMBER_OF_MINES;
 else {
@@ -35,22 +35,25 @@ else {
 const messageText = document.querySelector(".subtext");
 const mineText = document.querySelector(".minetext");
 
-// Bomb message
+// Bomb Message
 var div = document.createElement("div");
 div.textContent = "🥟";
 mineText.prepend(div);
-twemoji.parse(document.body);
 
 // Setup Board
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 const boardElement = document.querySelector(".board");
 
-// Countdown
+// Countdown Text Setup
 const timerElement = document.getElementById("game-time");
+const timerIcon = document.getElementById("timer-icon");
+timerIcon.textContent = "⏳️";
+
+// Countdown Variables
 var isFirstClick = true;
 setTimeText(TIME_LIMIT);
-let timePassed;
-let timer = true;
+var timePassed;
+var timer = true;
 var timeIsUp = false;
 
 /**
@@ -130,6 +133,8 @@ function startTimer() {
       if (seconds < -1) {
         timerElement.style.color = "red";
         timerElement.innerHTML = "0:00";
+        timerIcon.textContent = "⌛️";
+        twemoji.parse(timerIcon);
         clearInterval(timePassed);
         timeIsUp = true;
         checkGameEnd();
@@ -175,3 +180,6 @@ function checkGameEnd() {
 function stopProp(e) {
   e.stopImmediatePropagation();
 }
+
+// Change Unicode emojis to Twemojis
+twemoji.parse(document.body);
