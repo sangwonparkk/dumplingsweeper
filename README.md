@@ -23,9 +23,7 @@ Dumpling Sweeper made with ❤️</br>
 
 - ~~Center display message~~
 - ~~Change text to red when remaining number of flags is less than 0~~
-- Change timer to countdown
+- ~~Change timer to countdown~~
 - Add functionality to change countdown time
 - Add functionality to change mine count
 - Add a bowl around the grid + fire animations..?
-
-This is countdown
