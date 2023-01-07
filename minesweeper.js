@@ -12,7 +12,8 @@ export const TILE_STATUSES = {
 
 // Emojis
 const TIMER = "⏳️";
-const FLAG = "🚩";
+// const FLAG = "🚩";
+const FLAG = "🥢";
 const DETONATION = "😭";
 const MINE = "🥟";
 
