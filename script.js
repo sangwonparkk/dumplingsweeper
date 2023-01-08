@@ -24,7 +24,7 @@ import {
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
-const TIME_LIMIT = 75;
+const TIME_LIMIT = 10;
 
 // Display Message
 const minesLeftText = document.querySelector(".data-mine-count");
@@ -62,13 +62,19 @@ var timeIsUp = false;
  * Receive the time limit in seconds and display in screen
  */
 function setTimeText(timeLimit) {
+  timerElement.style.color = "#dee2ff"
   let second = timeLimit % 60;
   let minute = Math.floor(timeLimit / 60);
-  if (second < 10 && second >= 0)
+  if (second < 10 && second >= 0) {
     timerElement.innerHTML = minute + ":" + "0" + second;
-  else {
+  } else {
     timerElement.innerHTML = minute + ":" + second;
   }
+  if (minute === 0 && second < 6) timerElement.style.color = "red";
+  // Flashing countdown
+  // if (minute === 0 && second === 5) timerElement.style.color = "red";
+  // if (minute === 0 && second === 3) timerElement.style.color = "red";
+  // if (minute === 0 && second === 1) timerElement.style.color = "red";
 }
 
 board.forEach((row) => {
