@@ -99,7 +99,6 @@ export function markTile(tile) {
   } else {
     tile.status = TILE_STATUSES.MAKRED;
     tile.element.textContent = FLAG;
-    twemoji.parse(tile.element);
   }
 }
 
@@ -114,14 +113,12 @@ export function revealTile(board, tile, clicked) {
   if (tile.mine && clicked) {
     tile.status = TILE_STATUSES.MINE;
     tile.element.textContent = DETONATION;
-    twemoji.parse(tile.element);
     return;
   }
 
   if (tile.mine && !clicked) {
     tile.status = TILE_STATUSES.MINE;
     tile.element.textContent = MINE;
-    twemoji.parse(tile.element);
     return;
   }
 

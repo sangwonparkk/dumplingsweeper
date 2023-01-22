@@ -176,7 +176,6 @@ function startTimer() {
         timerElement.style.color = "red";
         timerElement.innerHTML = "0:00";
         timerIcon.textContent = "⌛️";
-        twemoji.parse(timerIcon);
         clearInterval(timePassed);
         timeIsUp = true;
         checkGameEnd();
