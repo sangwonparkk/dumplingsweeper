@@ -58,13 +58,10 @@ settingsButton.setAttribute("type", "button");
 settingsButton.innerHTML = "Settings";
 containerButton.appendChild(settingsButton);
 
-// Modal Constants
-const body = document.querySelector("body");
-
 // Setup Settings Modal
 const settingsModal = document.createElement("section");
 settingsModal.setAttribute("class", "modal hidden");
-body.appendChild(settingsModal);
+document.body.appendChild(settingsModal);
 
 // Settings Modal Flex Container
 const flexContainer = document.createElement("div");
@@ -268,4 +265,4 @@ updateButton.addEventListener("click", () => {
 });
 
 // Change Unicode emojis to Twemojis
-twemoji.parse(body);
+twemoji.parse(document.body);
