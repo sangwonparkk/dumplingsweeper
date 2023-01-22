@@ -13,6 +13,7 @@ import {
   checkWin,
 } from "./minesweeper.js";
 
+
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
