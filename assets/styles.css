@@ -28,7 +28,7 @@ body {
   font-size: 3rem;
 }
 
-.container {
+.container-text {
   color: var(--light-primary);
   font-size: 1.5rem;
   margin: 10px 0;
@@ -101,8 +101,13 @@ img.emoji {
 }
 
 button {
+  cursor: pointer;
+  border: none;
+}
+
+.btn {
   text-align: center;
-  border-radius: 60px;
+  border-radius: 30px;
   white-space: nowrap;
   width: 8em;
   cursor: pointer;
@@ -112,9 +117,87 @@ button {
   border: 3px solid var(--dark-base);
 }
 
-#new-game-button {
+.container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-new {
   color: var(--light-primary);
   background-color: var(--dark-base);
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+.btn-settings {
+  color: var(--dark-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+  width: 330px;
+  padding: 1.3rem;
+  min-height: 200px;
+  position: absolute;
+  top: 160px;
+  background-color: white;
+  border: 3px solid #ddd;
+  border-radius: 15px;
+  color: var(--dark-base);
+  z-index: 2;
+}
+
+.modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-base);
+  margin: 0.4rem 0 0.2rem;
+  flex: 0 1 auto;
+  transform: translate(0px, -10px);
+
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: var(--dark-base);
+  margin: 0.4rem 0 0.2rem;
+}
+
+.btn-update {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: var(--dark-base);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+} */
+
+.hidden {
+  display: none;
 }

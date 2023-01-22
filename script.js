@@ -2,14 +2,6 @@
  *
  * script.js file is for Display/UI
  *
- * List out the game features and steps
- *
- * 1. Populate a board with tiles/mines
- * 2. Left click on tiles
- *   a. Reveal tiles
- * 3. Right click on tiles
- *   a. Mark tiles
- * 4. Check for win/lose
  */
 
 import {
@@ -24,13 +16,13 @@ import {
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 75;
 
 // Display Message
 const minesLeftText = document.querySelector(".data-mine-count");
-if (NUMBER_OF_MINES >= 10) minesLeftText.textContent = NUMBER_OF_MINES;
+if (NUMBER_OF_MINES >= 10) minesLeftText.textContent = "0" + NUMBER_OF_MINES;
 else {
-  minesLeftText.textContent = "0" + NUMBER_OF_MINES;
+  minesLeftText.textContent = "00" + NUMBER_OF_MINES;
 }
 const messageText = document.querySelector(".subtext");
 const mineText = document.querySelector(".minetext");
@@ -49,6 +41,52 @@ const timerElement = document.getElementById("game-time");
 const timerIcon = document.getElementById("timer-icon");
 timerIcon.textContent = "⏳️";
 
+// Buttons
+const containerButton = document.querySelector(".container-btn");
+
+// New Game Button
+const newGameButton = document.createElement("button");
+newGameButton.setAttribute("class", "btn btn-new");
+newGameButton.setAttribute("type", "button");
+newGameButton.innerHTML = "New Game";
+containerButton.appendChild(newGameButton);
+
+// Settings Button
+const settingsButton = document.createElement("button");
+settingsButton.setAttribute("class", "btn btn-settings");
+settingsButton.setAttribute("type", "button");
+settingsButton.innerHTML = "Settings";
+containerButton.appendChild(settingsButton);
+
+// Modal Constants
+const body = document.querySelector("body");
+
+// Setup Settings Modal
+const settingsModal = document.createElement("section");
+settingsModal.setAttribute("class", "modal hidden");
+body.appendChild(settingsModal);
+
+// Settings Modal Flex Container
+const flexContainer = document.createElement("div");
+flexContainer.setAttribute("class", "flex");
+settingsModal.appendChild(flexContainer);
+
+// Settings Modal Flex
+const modalTitle = document.createElement("div");
+modalTitle.setAttribute("class", "modal-title");
+modalTitle.innerHTML = "Settings";
+flexContainer.appendChild(modalTitle);
+
+// Settings Modal Text
+settingsModal.innerHTML += "<p>Timer</p>";
+
+// Settings Modal Update Button
+const updateButton = document.createElement("button");
+updateButton.setAttribute("class", "btn-update");
+updateButton.setAttribute("type", "button");
+updateButton.innerHTML = "Update and Reload";
+settingsModal.appendChild(updateButton);
+
 // Countdown Variables
 var isFirstClick = true;
 setTimeText(TIME_LIMIT);
@@ -62,7 +100,7 @@ var timeIsUp = false;
  * Receive the time limit in seconds and display in screen
  */
 function setTimeText(timeLimit) {
-  timerElement.style.color = "#dee2ff"
+  timerElement.style.color = "#dee2ff";
   let second = timeLimit % 60;
   let minute = Math.floor(timeLimit / 60);
   if (second < 10 && second >= 0) {
@@ -118,10 +156,10 @@ function listMinesLeft() {
   if (markedTilesCount <= NUMBER_OF_MINES) {
     minesLeftText.style.color = "#dee2ff";
     let remainingFlags = NUMBER_OF_MINES - markedTilesCount;
-    if (remainingFlags < 10) {
+    if (remainingFlags >= 10) {
       minesLeftText.textContent = "0" + remainingFlags;
     } else {
-      minesLeftText.textContent = remainingFlags;
+      minesLeftText.textContent = "00" + remainingFlags;
     }
   } else {
     minesLeftText.style.color = "red";
@@ -187,5 +225,47 @@ function stopProp(e) {
   e.stopImmediatePropagation();
 }
 
+// Button Functionality
+// New Game Button functionality
+newGameButton.addEventListener("click", () => {
+  window.location.reload();
+});
+
+// Modal Constants
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
+
+// Open Settings Modal functionality
+const openSettingsModal = function () {
+  modal.classList.remove("hidden");
+  // overlay.classList.remove("hidden");
+};
+settingsButton.addEventListener("click", () => {
+  if (modal.classList.contains("hidden")) {
+    openSettingsModal();
+  } else {
+    closeSettingsModal();
+  }
+});
+
+// Close Settings Modal functionality
+const closeSettingsModal = function () {
+  modal.classList.add("hidden");
+  // overlay.classList.add("hidden");
+};
+
+// Close Settings modal for keyboard escape key
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeSettingsModal();
+  }
+});
+
+// Update Settings Button functionality
+updateButton.addEventListener("click", () => {
+  // Need to add update functionality
+  window.location.reload();
+});
+
 // Change Unicode emojis to Twemojis
-twemoji.parse(document.body);
+twemoji.parse(body);

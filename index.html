@@ -24,18 +24,15 @@
     <h3 class="title">Dumpling Sweeper</h3>
     <div class="board"></div>
     <div class="container">
-      <div class="minetext"><span class="data-mine-count"></span></div>
-      <div class="subtext"></div>
-      <div class="timer">
-        <span id="timer-icon"></span><span id="game-time">0:00</span>
+      <div class="container-text">
+        <div class="minetext"><span class="data-mine-count"></span></div>
+        <div class="subtext"></div>
+        <div class="timer">
+          <span id="timer-icon"></span><span id="game-time"></span>
+        </div>
       </div>
+      <div class="container-btn"></div>
     </div>
-    <button
-      id="new-game-button"
-      type="button"
-      onclick="window.location.reload()"
-    >
-      New Game
-    </button>
+    <div class="overlay hidden"></div>
   </body>
 </html>
