@@ -263,6 +263,3 @@ updateButton.addEventListener("click", () => {
   // Need to add update functionality
   window.location.reload();
 });
-
-// Change Unicode emojis to Twemojis
-twemoji.parse(document.body);

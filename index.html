@@ -14,10 +14,23 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
     </style>
+    <!-- This retrieves the latest Twemoji script -->
     <script
       src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Script to render emojis as Twemojis -->
+    <script>
+      window.onload = function () {
+        // Parses the document body and
+        // inserts <img> tags in place of Unicode Emojis
+        twemoji.parse(
+          document.body,
+          { folder: "svg", ext: ".svg" } // This is to specify to Twemoji to use SVGs and not PNGs
+        );
+      };
+    </script>
     <script src="script.js" type="module"></script>
   </head>
   <body>
