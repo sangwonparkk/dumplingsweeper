@@ -13,11 +13,13 @@ import {
   checkWin,
 } from "./minesweeper.js";
 
-
 // Constant Variables
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 10;
-const TIME_LIMIT = 75;
+var TIME_LIMIT = localStorage.getItem("inputted");
+if (!TIME_LIMIT) {
+  TIME_LIMIT = 75;
+}
 
 // Display Message
 const minesLeftText = document.querySelector(".data-mine-count");
@@ -65,24 +67,43 @@ settingsModal.setAttribute("class", "modal hidden");
 document.body.appendChild(settingsModal);
 
 // Settings Modal Flex Container
-const flexContainer = document.createElement("div");
-flexContainer.setAttribute("class", "flex");
-settingsModal.appendChild(flexContainer);
+const titleContainer = document.createElement("div");
+titleContainer.setAttribute("class", "flex");
+settingsModal.appendChild(titleContainer);
 
 // Settings Modal Flex
 const modalTitle = document.createElement("div");
 modalTitle.setAttribute("class", "modal-title");
 modalTitle.innerHTML = "Settings";
-flexContainer.appendChild(modalTitle);
+titleContainer.appendChild(modalTitle);
 
-// Settings Modal Text
-settingsModal.innerHTML += "<p>Timer</p>";
+// Settings Modal Timer Text
+const timerContainer = document.createElement("div");
+timerContainer.setAttribute("class", "flex timer");
+settingsModal.appendChild(timerContainer);
+const timerLabel = document.createElement("label");
+timerLabel.setAttribute("for", "time");
+timerLabel.setAttribute("class", "label-settings");
+timerLabel.textContent = "Time (in seconds)";
+timerContainer.appendChild(timerLabel);
+
+// Settings Modal Timer Input
+const timerNumber = document.createElement("input");
+timerNumber.setAttribute("type", "number");
+timerNumber.setAttribute("name", "time");
+timerNumber.setAttribute("id", "time-input");
+timerNumber.setAttribute("placeholder", TIME_LIMIT);
+timerNumber.setAttribute("value", TIME_LIMIT);
+timerNumber.setAttribute("step", 5);
+timerNumber.setAttribute("inputted", "inputted");
+timerContainer.appendChild(timerNumber);
 
 // Settings Modal Update Button
 const updateButton = document.createElement("button");
 updateButton.setAttribute("class", "btn-update");
 updateButton.setAttribute("type", "button");
-updateButton.innerHTML = "Update and Reload";
+updateButton.setAttribute("id", "update");
+updateButton.innerHTML = "Save and Restart Game";
 settingsModal.appendChild(updateButton);
 
 // Countdown Variables
@@ -260,6 +281,7 @@ document.addEventListener("keydown", function (e) {
 
 // Update Settings Button functionality
 updateButton.addEventListener("click", () => {
-  // Need to add update functionality
+  var num = document.getElementById("time-input").value;
+  localStorage.setItem("inputted", num);
   window.location.reload();
 });

@@ -158,6 +158,10 @@ button {
   justify-content: center;
 }
 
+.modal .timer {
+  justify-content: space-between;
+}
+
 .modal-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -165,13 +169,12 @@ button {
   margin: 0.4rem 0 0.2rem;
   flex: 0 1 auto;
   transform: translate(0px, -10px);
-
 }
 
-.modal p {
+.modal .label-settings {
   font-size: 0.9rem;
   color: var(--dark-base);
-  margin: 0.4rem 0 0.2rem;
+  margin: auto 0;
 }
 
 .btn-update {
@@ -200,4 +203,8 @@ button {
 
 .hidden {
   display: none;
+}
+
+#time-input {
+  width: 50px;
 }
